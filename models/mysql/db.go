@@ -13,9 +13,9 @@ import (
 )
 
 var (
-	dbUser     = "root"
-	dbPassword = "endville!"
-	dbHost     = "127.0.0.1"
+	dbUser     = "july"
+	dbPassword = "123456"
+	dbHost     = "192.168.31.171"
 	dbPort     = "3306"
 	dbName     = "endville_gps"
 )

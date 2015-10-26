@@ -27,11 +27,12 @@ func HandleMessage(sess *session.Session, msg *message.TerminalMessage) bool {
 	}
 
 	if msg.TerminalSn != "" {
+		// 当session第一次连接上来时，根据message为其设置terminal sn
 		if sess.TerminalSn == "" {
 			(*sess).TerminalSn = msg.TerminalSn
 			var result []orm.Params
 			o := mysql.GetOrm()
-			num, err := o.Raw("SELECT id,user_id,group_id FROM terminal WHERE terminal_sn = ?", msg.TerminalSn).Values(&result)
+			num, err := o.Raw("SELECT id,user_id,group_id FROM terminal WHERE terminal_sn = ? LIMIT 1", msg.TerminalSn).Values(&result)
 			if err == nil && num > 0 {
 				id, _ := strconv.ParseInt(result[0]["id"].(string), 10, 64)
 				uid, _ := strconv.ParseInt(result[0]["user_id"].(string), 10, 64)

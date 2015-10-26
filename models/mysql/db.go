@@ -21,7 +21,7 @@ var (
 )
 
 var (
-	ERROR_NOT_FOUND = errors.New("未找到匹配记录")
+	ERROR_NOT_FOUND = errors.New("未找到匹配记录!")
 )
 
 func GetOrm() orm.Ormer {

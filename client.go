@@ -19,7 +19,7 @@ var waitGroup sync.WaitGroup
 var mutex sync.Mutex
 
 // var serverAddr string = "61.153.22.147:8500"
-var serverAddr string = "190.168.1.138:8500"
+var serverAddr string = "190.168.251.163:8500"
 
 // var serverAddr string = "127.0.0.1:8500"
 var terminalSNPrefix string
